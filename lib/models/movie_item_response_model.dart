@@ -2,6 +2,7 @@ import 'package:gocaffeine/models/movie_item_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'movie_item_response_model.g.dart';
 
+// 영화 목록 호출시 response model
 @JsonSerializable()
 class MovieItemResponseModel {
   MovieItemResponseModel({

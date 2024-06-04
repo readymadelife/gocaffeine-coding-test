@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// SliverAppBar - SearchBar 구성
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({
     super.key,

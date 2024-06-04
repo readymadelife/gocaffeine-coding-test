@@ -13,6 +13,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // 최초 star keyword 영화 목록 검색
     return BlocProvider(
       create: (context) => MovieItemsBloc(moviesRepository: moviesRepository)
         ..add(const SearchMovies(keyword: 'star')),

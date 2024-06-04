@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'movie_item_model.g.dart';
 
+// 영화 목록 호출 시 영화 정보 model
 @JsonSerializable()
 class MovieItemModel {
   MovieItemModel({

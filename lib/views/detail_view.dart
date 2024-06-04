@@ -19,6 +19,7 @@ class MovieDetailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
+      // 해당 imdbID에 대한 영화 상세정보 fetch
       create: (context) =>
           MovieItemDetailBloc(moviesRepository: moviesRepository)
             ..add(FetchMovieDetail(imdbID: imdbID)),
@@ -28,6 +29,7 @@ class MovieDetailView extends StatelessWidget {
             title: const Text('상세정보'),
           ),
           body: BlocBuilder<MovieItemDetailBloc, MovieItemDetailState>(
+            // state에 따라 화면 구성
             builder: (context, state) {
               if (state is MovieItemDetailInitial) {
                 return const Center(

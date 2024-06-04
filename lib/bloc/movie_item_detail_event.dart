@@ -1,5 +1,6 @@
 part of 'movie_item_detail_bloc.dart';
 
+// 데이터 fetch 이벤트
 sealed class MovieItemDetailEvent extends Equatable {
   const MovieItemDetailEvent();
 

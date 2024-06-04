@@ -5,6 +5,7 @@ import 'package:gocaffeine/models/movie_item_response_model.dart';
 class ApiService {
   final Dio _dio = Dio();
 
+  // 영화목록 api
   Future<MovieItemResponseModel> fetchMovieItem(
       String keyword, int page) async {
     try {
@@ -21,6 +22,7 @@ class ApiService {
     }
   }
 
+  // 영화정보 api
   Future<MovieItemDetailModel> fetchMovieDetail(String imdbID) async {
     try {
       final response =

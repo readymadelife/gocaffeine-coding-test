@@ -8,10 +8,12 @@ class MoviesRepository {
   });
   final ApiService apiService;
 
+  // 영화 목록 api 호출
   Future<MovieItemResponseModel> fetchMovies(String keyword, int page) async {
     return await apiService.fetchMovieItem(keyword, page);
   }
 
+  // 영화 정보 api 호출
   Future<MovieItemDetailModel> fetchMovieDetail(String imdbID) async {
     return await apiService.fetchMovieDetail(imdbID);
   }

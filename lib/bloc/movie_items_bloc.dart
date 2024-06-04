@@ -13,6 +13,9 @@ class MovieItemsBloc extends Bloc<MovieItemsEvent, MovieItemsState> {
     on<SearchMovies>(_onSearchMovies);
   }
 
+  // 영화 목록 요청 (최초 X)
+  // case로 이미 loadSuccess state일때 (마지막 페이지 도달 X, 데이터 요청 중 X), 다음 페이지 영화 목록 요청 후 영화 목록 부분 업데이트
+
   Future<void> _onFetchMovies(
     FetchMovies event,
     Emitter<MovieItemsState> emit,
@@ -59,6 +62,8 @@ class MovieItemsBloc extends Bloc<MovieItemsEvent, MovieItemsState> {
     }
   }
 
+  // 최초 영화목록 요청
+  // 데이터 요청 중 상태 변경 -> 데이터 요창 -> 성공 상태 변경 or 실패 상태 변경
   Future<void> _onSearchMovies(
     SearchMovies event,
     Emitter<MovieItemsState> emit,

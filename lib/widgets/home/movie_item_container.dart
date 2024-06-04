@@ -5,6 +5,8 @@ import 'package:gocaffeine/models/movie_item_model.dart';
 import 'package:gocaffeine/widgets/home/home_search_bar.dart';
 import 'package:gocaffeine/widgets/home/movie_item_wrapper.dart';
 
+// 영화 목록 list 관리
+// 무한 스크롤 적용
 class MovieItemContainer extends StatefulWidget {
   const MovieItemContainer({
     super.key,
@@ -17,12 +19,14 @@ class MovieItemContainer extends StatefulWidget {
 class _MovieITemContainerState extends State<MovieItemContainer> {
   final ScrollController _scrollController = ScrollController();
 
+  // 무한스크롤 listener 등록
   @override
   void initState() {
     super.initState();
     _scrollController.addListener(_onScroll);
   }
 
+  // 무한스크롤 removeListener 등록
   @override
   void dispose() {
     _scrollController.removeListener(_onScroll);
@@ -30,6 +34,7 @@ class _MovieITemContainerState extends State<MovieItemContainer> {
     super.dispose();
   }
 
+  //화면 밑 90%에 도달했을때 다음 페이지 영화 목록 fetch;
   void _onScroll() {
     if (_isBottom) {
       context.read<MovieItemsBloc>().add(const FetchMovies('star'));
@@ -58,6 +63,7 @@ class _MovieITemContainerState extends State<MovieItemContainer> {
     );
   }
 
+  // search bar 구성
   Widget _buildSearchBar() {
     return BlocBuilder<MovieItemsBloc, MovieItemsState>(
       builder: (context, state) {
@@ -70,6 +76,7 @@ class _MovieITemContainerState extends State<MovieItemContainer> {
     );
   }
 
+  // keyword title 구성
   Widget _buildKeywordDisplay() {
     return BlocBuilder<MovieItemsBloc, MovieItemsState>(
       builder: (context, state) {
@@ -93,6 +100,7 @@ class _MovieITemContainerState extends State<MovieItemContainer> {
     );
   }
 
+  // MovieItemsState 상태에 따른 화면 구성
   Widget _buildMovieList() {
     return BlocBuilder<MovieItemsBloc, MovieItemsState>(
       builder: (context, state) {
@@ -133,6 +141,7 @@ class _MovieITemContainerState extends State<MovieItemContainer> {
     );
   }
 
+  // 무한 스크롤 중 데이터 loading 중이거나 마지막 페이지일 경우 indicator 적용
   Widget _buildFetchMoreMoviesIndicator() {
     return BlocBuilder<MovieItemsBloc, MovieItemsState>(
         builder: (context, state) {

@@ -1,5 +1,6 @@
 part of 'movie_items_bloc.dart';
 
+// initial, 데이터 요청, 데이터 요청 성공, 데이터 요청 실패 4가지 state
 sealed class MovieItemsState extends Equatable {
   const MovieItemsState();
 
@@ -26,6 +27,7 @@ final class MovieItemsLoadSuccess extends MovieItemsState {
   final int page;
   final bool isLoadInProgress;
 
+  // 상태 부분 업데이트 코드
   MovieItemsLoadSuccess copyWith({
     MovieItemResponseModel? movies,
     bool? isMaxReached,

@@ -14,7 +14,7 @@ class MovieItemDetailBloc
   }
 
   final MoviesRepository moviesRepository;
-
+  // 데이터 요청 중 상태 변경 -> 데이터 요창 -> 성공 상태 변경 or 실패 상태 변경
   Future<void> _onFetchMovieDetail(
       FetchMovieDetail event, Emitter<MovieItemDetailState> emit) async {
     emit(MovieItemDetailInProgress());

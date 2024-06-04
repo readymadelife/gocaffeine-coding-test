@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gocaffeine/views/detail_view.dart';
 
+// 영화 목록 중 하나의 item wrapper
 class MovieItemWrapper extends StatelessWidget {
   const MovieItemWrapper({
     super.key,

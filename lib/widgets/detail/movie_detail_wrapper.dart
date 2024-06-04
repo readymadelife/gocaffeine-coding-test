@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gocaffeine/models/movie_item_detail_model.dart';
 
+// 영화 상세 정보 wrapper 구성
 class MovieDetailWrapper extends StatelessWidget {
   const MovieDetailWrapper({
     super.key,

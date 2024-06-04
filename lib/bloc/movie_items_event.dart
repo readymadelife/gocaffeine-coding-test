@@ -7,6 +7,7 @@ sealed class MovieItemsEvent extends Equatable {
   List<Object> get props => [];
 }
 
+// 데이터 요청 event (최초 X)
 class FetchMovies extends MovieItemsEvent {
   const FetchMovies(this.keyword);
   final String keyword;
@@ -15,6 +16,7 @@ class FetchMovies extends MovieItemsEvent {
   List<Object> get props => [keyword];
 }
 
+// 최초 영화 목록 요청 event
 class SearchMovies extends MovieItemsEvent {
   const SearchMovies({
     required this.keyword,
